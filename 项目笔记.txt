@@ -1,0 +1,13 @@
+# 2022/3/15
+注解依赖注入时爆红：
+打开ide设置，Editor====>Inspections======>spring Core=====>Code
+=====>Autowiring for Bean Class错误级别改成其他或将选项不勾选
+
+保存数据要保证幂等性
+
+todo:
+    事务的传播
+    是一个接口，有一个默认值：Propagation propagation() default Propagation.REQUIRED;
+    REQUIRED指当前的事务一定要使用事务，如果说当前的事务，没有或不存在一定会创建一个新的事务。
+# 2022/3/16
+todo: 学习事务

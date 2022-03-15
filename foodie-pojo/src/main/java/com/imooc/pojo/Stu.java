@@ -12,35 +12,6 @@ public class Stu {
     private Integer id;
 
     /**
-     * 乐观锁
-     */
-    private Integer revision;
-
-    /**
-     * 创建人
-     */
-    @Column(name = "created_by")
-    private String createdBy;
-
-    /**
-     * 创建时间
-     */
-    @Column(name = "created_time")
-    private Date createdTime;
-
-    /**
-     * 更新人
-     */
-    @Column(name = "updated_by")
-    private String updatedBy;
-
-    /**
-     * 更新时间
-     */
-    @Column(name = "updated_time")
-    private Date updatedTime;
-
-    /**
      * 姓名
      */
     private String name;
@@ -49,6 +20,18 @@ public class Stu {
      * 年龄
      */
     private Integer age;
+
+    /**
+     * 创建时间
+     */
+    @Column(name = "created_time")
+    private Date createdTime;
+
+    /**
+     * 更新时间
+     */
+    @Column(name = "updated_time")
+    private Date updatedTime;
 
     /**
      * 获取主键id
@@ -69,42 +52,6 @@ public class Stu {
     }
 
     /**
-     * 获取乐观锁
-     *
-     * @return revision - 乐观锁
-     */
-    public Integer getRevision() {
-        return revision;
-    }
-
-    /**
-     * 设置乐观锁
-     *
-     * @param revision 乐观锁
-     */
-    public void setRevision(Integer revision) {
-        this.revision = revision;
-    }
-
-    /**
-     * 获取创建人
-     *
-     * @return created_by - 创建人
-     */
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    /**
-     * 设置创建人
-     *
-     * @param createdBy 创建人
-     */
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
-    }
-
-    /**
      * 获取创建时间
      *
      * @return created_time - 创建时间
@@ -120,24 +67,6 @@ public class Stu {
      */
     public void setCreatedTime(Date createdTime) {
         this.createdTime = createdTime;
-    }
-
-    /**
-     * 获取更新人
-     *
-     * @return updated_by - 更新人
-     */
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    /**
-     * 设置更新人
-     *
-     * @param updatedBy 更新人
-     */
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
     }
 
     /**
