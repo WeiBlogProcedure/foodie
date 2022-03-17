@@ -1,10 +1,10 @@
 package com.imooc.controller;
 
 import com.imooc.service.StuService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @ClassName StuFooController
@@ -19,25 +19,30 @@ public class StuFooController {
     @Autowired
     private StuService stuService;
 
-    @GetMapping("/getStu")
-    public Object getStu(int id) {
+    private final Logger logger = LoggerFactory.getLogger(getClass());
+
+    @RequestMapping(value = "/getStu", method = RequestMethod.GET)
+    public Object getStu(@RequestParam int id) {
+        logger.info("requestParam = {}",id);
         return stuService.getStuInfo(id);
     }
 
-    @PostMapping("/saveStu")
+    @RequestMapping(value = "/saveStu", method = RequestMethod.POST)
     public Object saveStu() {
         stuService.saveStu();
         return "OK";
     }
 
-    @PostMapping("/updateStu")
-    public Object updateStu(int id) {
+    @RequestMapping(value = "/updateStu", method = RequestMethod.POST)
+    public Object updateStu(@RequestParam int id) {
+        logger.info("requestParam = {}",id);
         stuService.updateStu(id);
         return "OK";
     }
 
-    @PostMapping("/deleteStu")
-    public Object deleteStu(int id) {
+    @RequestMapping(value = "/deleteStu", method = RequestMethod.POST)
+    public Object deleteStu(@RequestParam int id) {
+        logger.info("requestParam = {}",id);
         stuService.deleteStu(id);
         return "OK";
     }
